@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+html {
+	@apply flex w-screen flex-col items-center bg-black font-bold text-white;
+}
