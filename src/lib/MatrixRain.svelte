@@ -1,6 +1,7 @@
 <script lang="ts">
 	let canvas: HTMLCanvasElement;
 
+	const FPS = 8;
 	const fontSize = 48;
 
 	// New Matrix Rain Algorithm:
@@ -71,7 +72,7 @@
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 			ctx.font = fontSize + 'px MatrixCodeNFI';
 			sym.draw(ctx);
-		}, 1000 / 8);
+		}, 1000 / FPS);
 
 		window.addEventListener('resize', function () {
 			canvas.width = window.innerWidth;
