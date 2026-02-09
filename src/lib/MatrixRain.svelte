@@ -1,8 +1,8 @@
 <script lang="ts">
 	let canvas: HTMLCanvasElement;
 
-	const FPS = 8;
-	const fontSize = 48;
+	const FPS = 20;
+	const fontSize = 32;
 
 	// New Matrix Rain Algorithm:
 	//   Length & colors determined on initialization.
@@ -54,8 +54,60 @@
 
 		draw(ctx: CanvasRenderingContext2D) {
 			this.text = this.characters.charAt(Math.floor(Math.random() * this.characters.length));
+			ctx.textAlign = 'center';
 			ctx.fillStyle = this.color.to_string();
-			ctx.fillText(this.text, this.x * this.fontSize, this.y * this.fontSize);
+			ctx.fillText(this.text, (this.x + 0.5) * this.fontSize, this.y * this.fontSize);
+		}
+	}
+
+	class RainColumn {
+		x: number;
+		minLength: number;
+		maxLength: number;
+		falloff: number;
+		symbols: Symbol[];
+		fontSize: number;
+
+		constructor(
+			x: number,
+			minLength: number,
+			maxLength: number,
+			falloff: number,
+			fontSize: number
+		) {
+			this.x = x;
+			this.minLength = minLength;
+			this.maxLength = maxLength;
+			this.falloff = falloff;
+			this.symbols = [];
+			this.fontSize = fontSize;
+			this.burst();
+		}
+
+		burst() {
+			let length = Math.round(this.minLength + Math.random() * (this.maxLength - this.minLength));
+			this.symbols.push(new Symbol(this.x, 0, this.fontSize, new Color(123, 241, 168, 1)));
+			for (let i = 1; i < length; i++) {
+				this.symbols.push(
+					new Symbol(this.x, 0 - i, this.fontSize, new Color(0, 255, 0, 1 - i * this.falloff))
+				);
+			}
+		}
+
+		draw(ctx: CanvasRenderingContext2D) {
+			if (this.symbols[this.symbols.length - 1].y > Math.round(2 + Math.random() * 2)) {
+				this.burst();
+			}
+
+			this.symbols.forEach((sym) => {
+				// Font width needs to be scaled in proportion to the font height
+				if (sym.y * (fontSize * 1.5) < canvas.width) {
+					sym.draw(ctx);
+					sym.y += 1;
+				} else {
+					this.symbols.shift();
+				}
+			});
 		}
 	}
 
@@ -65,18 +117,26 @@
 
 		const ctx: CanvasRenderingContext2D = canvas.getContext('2d')!;
 
-		let sym = new Symbol(0, 1, fontSize, new Color(0, 255, 0, 1));
+		let rainColumns: RainColumn[] = [];
+		for (let i = 0; i < Math.floor(canvas.width / fontSize); i++) {
+			rainColumns.push(new RainColumn(i, 1, 12, 0.075, fontSize));
+		}
 
 		setInterval(() => {
 			ctx.fillStyle = 'rgba(0, 0, 0, 1)';
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 			ctx.font = fontSize + 'px MatrixCodeNFI';
-			sym.draw(ctx);
+			rainColumns.forEach((col) => col.draw(ctx));
 		}, 1000 / FPS);
 
 		window.addEventListener('resize', function () {
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;
+
+			rainColumns = [];
+			for (let i = 0; i < Math.floor(canvas.width / fontSize); i++) {
+				rainColumns.push(new RainColumn(i, 1, 12, 0.075, fontSize));
+			}
 		});
 	});
 </script>
