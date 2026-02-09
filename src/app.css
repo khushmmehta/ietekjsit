@@ -8,6 +8,12 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'MatrixCodeNFI';
+	src: url('$lib/assets/fonts/matrixcodenfi.ttf');
+	font-style: normal;
+}
+
 *,
 *::before,
 *::after {

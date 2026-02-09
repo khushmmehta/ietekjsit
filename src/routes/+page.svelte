@@ -1,3 +1,9 @@
+<script lang="ts">
+	import MatrixRain from '$lib/MatrixRain.svelte';
+</script>
+
+<MatrixRain />
+
 <article class="flex w-screen flex-col">
 	<div class="self-start p-4 md:w-3xl lg:w-4xl">
 		<h1 class="text-6xl text-green-300 text-shadow-[0px_0px_24px_#00ff00]">What We're About.</h1>
