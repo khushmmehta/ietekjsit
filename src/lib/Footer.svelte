@@ -1,3 +1,8 @@
+<script lang="ts">
+	import iete_logo from '$lib/assets/images/iete_logo.jpg';
+	import somaiya_logo from '$lib/assets/images/somaiya_logo.webp';
+</script>
+
 <footer class="flex-columns mt-8 flex w-full flex-col items-center gap-8">
 	<div class="h-1 w-full bg-linear-to-r from-transparent via-green-500 to-transparent"></div>
 
@@ -22,11 +27,19 @@
 		</div>
 
 		<div class="flex flex-row gap-24">
-			<div class="box-flicker size-48 rounded-lg bg-black object-contain"></div>
-			<div class="box-flicker size-48 rounded-lg bg-black object-contain"></div>
+			<img
+				class="box-flicker object-stretch size-48 rounded-full"
+				src={iete_logo}
+				alt="iete logo"
+			/>
+			<img
+				class="box-flicker object-stretch size-48 rounded-full"
+				src={somaiya_logo}
+				alt="somaiya_logo"
+			/>
 		</div>
 	</div>
 
 	<p class="w-full font-light text-neutral-400">2025-2026 IETE KJSIT. All rights reserved.</p>
-	<p class="text-flicker -mt-28 align-middle text-[19rem]">IETE - KJSIT</p>
+	<p class="text-flicker -mt-23 w-full text-left align-middle text-[16rem]">IETE - KJSIT</p>
 </footer>
