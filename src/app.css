@@ -23,3 +23,44 @@
 html {
 	@apply flex w-screen flex-col items-center bg-black font-bold text-white;
 }
+
+.text-flicker {
+	@apply text-green-300 text-shadow-[0px_0px_24px_#00ff00];
+	animation: flicker 3s infinite;
+}
+
+.box-flicker {
+	@apply shadow-[0px_0px_24px_4px_#00ff00];
+	animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+	0%,
+	5%,
+	10%,
+	15%,
+	25%,
+	30%,
+	50%,
+	70%,
+	80%,
+	100% {
+		opacity: 1;
+		filter: brightness(1);
+	}
+	7%,
+	12%,
+	27%,
+	72% {
+		opacity: 0.6;
+		filter: brightness(0.6);
+	}
+	8% {
+		opacity: 0.3;
+		filter: brightness(0.3);
+	}
+}
+
+.iete_image {
+	background-image: url('$lib/assets/images/iete_logo.jpg');
+}

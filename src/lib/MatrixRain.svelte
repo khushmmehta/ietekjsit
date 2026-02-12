@@ -2,7 +2,7 @@
 	let canvas: HTMLCanvasElement;
 
 	const FPS = 20;
-	const fontSize = 32;
+	const fontSize = 24;
 
 	// New Matrix Rain Algorithm:
 	//   Length & colors determined on initialization.
@@ -95,14 +95,14 @@
 		}
 
 		draw(ctx: CanvasRenderingContext2D) {
-			if (this.symbols[this.symbols.length - 1].y > Math.round(2 + Math.random() * 2)) {
+			if (this.symbols[this.symbols.length - 1].y > Math.round(8 + Math.random() * 8)) {
 				this.burst();
 			}
 
 			this.symbols.forEach((sym) => {
 				// Font width needs to be scaled in proportion to the font height
 				if (sym.y * (fontSize * 1.5) < canvas.width) {
-					sym.draw(ctx);
+					if (sym.y > -1) sym.draw(ctx);
 					sym.y += 1;
 				} else {
 					this.symbols.shift();
@@ -141,4 +141,4 @@
 	});
 </script>
 
-<canvas bind:this={canvas} class="h-screen w-screen"></canvas>
+<canvas bind:this={canvas} class="fixed -z-10 h-screen w-screen"></canvas>
