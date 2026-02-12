@@ -9,6 +9,8 @@
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+<div class="flex h-auto w-screen flex-col items-center px-32">
+	{@render children()}
 
-<Footer />
+	<Footer />
+</div>
