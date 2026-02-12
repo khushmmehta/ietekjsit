@@ -1,17 +1,10 @@
 <script lang="ts">
-	import { T, useTask } from '@threlte/core';
-	import { interactivity } from '@threlte/extras';
-	import { Spring } from 'svelte/motion';
+	import { T } from '@threlte/core';
+	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { useLoader } from '@threlte/core';
+	import { asset } from '$app/paths';
 
-	interactivity();
-
-	const scale = new Spring(1);
-
-	let rotation = $state(0);
-
-	useTask((delta) => {
-		rotation += delta;
-	});
+	const gltf = useLoader(GLTFLoader).load(asset('/models/retrotv.glb'));
 </script>
 
 <T.PerspectiveCamera
@@ -23,17 +16,9 @@
 />
 
 <T.DirectionalLight position={[0, 10, 10]} />
+<T.DirectionalLight position={[0, 10, 10]} />
+<T.DirectionalLight position={[0, 10, 10]} />
 
-<T.Mesh
-	scale={scale.current}
-	rotation.y={rotation}
-	onpointerenter={() => {
-		scale.target = 3;
-	}}
-	onpointerleave={() => {
-		scale.target = 1;
-	}}
->
-	<T.BoxGeometry args={[1, 2, 1]} />
-	<T.MeshStandardMaterial color="hotpink" />
-</T.Mesh>
+{#if $gltf}
+	<T is={$gltf.scene} scale={10} />
+{/if}
