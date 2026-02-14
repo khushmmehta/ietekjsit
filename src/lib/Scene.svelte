@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { asset } from '$app/paths';
 	import { T, useLoader, useThrelte, useTask } from '@threlte/core';
-	import { Align, Text3DGeometry, FakeGlowMaterial } from '@threlte/extras';
+	import { Align, Text3DGeometry, useTexture } from '@threlte/extras';
 	import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 	import { MeshSurfaceSampler } from 'three/addons/math/MeshSurfaceSampler.js';
 	import {
@@ -14,6 +14,10 @@
 		Matrix4,
 		Plane
 	} from 'three';
+
+	import circleImage from '$lib/assets/images/circle.jpg';
+
+	let circleTexture = useTexture(circleImage);
 
 	let profont = asset('/fonts/ProFontWindows_Bold.json');
 	let font = useLoader(FontLoader).load(profont);
@@ -185,7 +189,14 @@
 	<Align rotation.x={mouseY * 0.5} rotation.y={-mouseX * 0.5}>
 		<T.Points bind:ref={pointsRef}>
 			<T is={pointsBufferGeometry} />
-			<T.PointsMaterial color="#00ff00" size={0.05} transparent={true} />
+			<T.PointsMaterial
+				color="#00ff00"
+				alphaMap={$circleTexture}
+				depthWrite={false}
+				toneMapped={false}
+				size={0.05}
+				transparent={true}
+			/>
 		</T.Points>
 	</Align>
 {/if}
