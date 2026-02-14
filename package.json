@@ -47,7 +47,7 @@
 	},
 	"dependencies": {
 		"@threlte/gltf": "^3.0.1",
-		"three-stdlib": "^2.36.1"
+		"lucide": "^0.564.0",
 		"lucide-svelte": "^0.563.0"
 	}
 }

@@ -11,9 +11,12 @@ importers:
       '@threlte/gltf':
         specifier: ^3.0.1
         version: 3.0.1
-      three-stdlib:
-        specifier: ^2.36.1
-        version: 2.36.1(three@0.182.0)
+      lucide:
+        specifier: ^0.564.0
+        version: 0.564.0
+      lucide-svelte:
+        specifier: ^0.563.0
+        version: 0.563.0(svelte@5.50.2)
     devDependencies:
       '@eslint/compat':
         specifier: ^2.0.2
@@ -1774,6 +1777,14 @@ packages:
   lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
+
+  lucide-svelte@0.563.0:
+    resolution: {integrity: sha512-pjZKw7TpQcamfQrx7YdbOHgmrcNeKiGGMD0tKZQaVktwSsbqw28CsKc2Q97ttwjytiCWkJyOa8ij2Q+Og0nPfQ==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
+
+  lucide@0.564.0:
+    resolution: {integrity: sha512-FasyXKHWon773WIl3HeCQpd5xS6E0aLjqxiQStlHNKktni+HDncc1sqY+6vRUbCfmDsIaKQz43EEQLAUDLZO0g==}
 
   maath@0.10.8:
     resolution: {integrity: sha512-tRvbDF0Pgqz+9XUa4jjfgAQ8/aPKmQdWXilFu2tMy4GWj4NOsx99HlULO4IeREfbO3a0sA145DZYyvXPkybm0g==}
@@ -4064,6 +4075,12 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
+  lucide-svelte@0.563.0(svelte@5.50.2):
+    dependencies:
+      svelte: 5.50.2
+
+  lucide@0.564.0: {}
+
   maath@0.10.8(@types/three@0.182.0)(three@0.182.0):
     dependencies:
       '@types/three': 0.182.0
@@ -4654,16 +4671,6 @@ snapshots:
       fflate: 0.6.10
       potpack: 1.0.2
       three: 0.122.0
-
-  three-stdlib@2.36.1(three@0.182.0):
-    dependencies:
-      '@types/draco3d': 1.4.10
-      '@types/offscreencanvas': 2019.7.3
-      '@types/webxr': 0.5.24
-      draco3d: 1.5.7
-      fflate: 0.6.10
-      potpack: 1.0.2
-      three: 0.182.0
 
   three-viewport-gizmo@2.2.0(three@0.182.0):
     dependencies:
