@@ -19,10 +19,10 @@
 
 			<div class="flex flex-col items-start">
 				<p class="text-flicker text-5xl">Navigation</p>
-				<p class="text-3xl">Home</p>
-				<p class="text-3xl">Oscillation</p>
-				<p class="text-3xl">Events</p>
-				<p class="text-3xl">Team & Faculty</p>
+				<a href="/" class="text-3xl">Home</a>
+				<a href="/oscillation/" class="text-3xl">Oscillation</a>
+				<a href="/past-events/" class="text-3xl">Past Events</a>
+				<a href="/team-and-faculty/" class="text-3xl">Team & Faculty</a>
 			</div>
 		</div>
 
