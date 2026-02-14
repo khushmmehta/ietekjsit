@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { Canvas } from '@threlte/core';
 	import Scene from '$lib/Scene.svelte';
+	import SceneTV from '$lib/SceneTV.svelte';
 	import Typewriter from '$lib/Typewriter.svelte';
+
 	let scrollY = $state<number>(0);
 
 	function handleScroll() {
@@ -15,6 +17,14 @@
 		if (!canAnimate) canAnimate = scrollY > window.innerHeight / 2;
 	});
 </script>
+
+<svelte:window on:scroll={handleScroll} />
+
+<div class="h-screen w-screen">
+	<Canvas>
+		<Scene />
+	</Canvas>
+</div>
 
 <article class="flex h-[25vw] w-full flex-col">
 	<div class="self-start md:w-3xl lg:w-4xl">
@@ -30,3 +40,8 @@
 	</div>
 </article>
 
+<div class="h-screen w-screen">
+	<Canvas>
+		<SceneTV />
+	</Canvas>
+</div>

@@ -1,26 +1,28 @@
 <script lang="ts">
-	let { text, speed = 65 } = $props();
+	let { text, speed = 65, startanim } = $props();
 
 	let visibleText = $state('');
 	let index = 0;
 	let interval: ReturnType<typeof setInterval>;
 
 	$effect(() => {
-		// Reset on text change
-		visibleText = '';
-		index = 0;
-		clearInterval(interval);
+		if (startanim) {
+			// Reset on text change
+			visibleText = '';
+			index = 0;
+			clearInterval(interval);
 
-		interval = setInterval(() => {
-			if (index < text.length) {
-				visibleText += text[index];
-				index++;
-			} else {
-				clearInterval(interval);
-			}
-		}, speed);
+			interval = setInterval(() => {
+				if (index < text.length) {
+					visibleText += text[index];
+					index++;
+				} else {
+					clearInterval(interval);
+				}
+			}, speed);
 
-		return () => clearInterval(interval);
+			return () => clearInterval(interval);
+		}
 	});
 </script>
 
