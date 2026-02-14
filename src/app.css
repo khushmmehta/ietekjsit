@@ -20,8 +20,12 @@
 	font-family: 'ProFont';
 }
 
-html {
-	@apply flex w-screen flex-col items-center bg-black font-bold text-white;
+html, body {
+	@apply h-full w-full bg-transparent font-bold text-white overflow-x-hidden;
+}
+
+body {
+	@apply flex flex-col items-center;
 }
 
 .text-flicker {
