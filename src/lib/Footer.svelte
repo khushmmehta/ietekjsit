@@ -53,6 +53,12 @@
 					className="text-xl md:text-3xl"
 				/>
 				<HackerLink
+					href="/workshops/"
+					label="Upcoming Workshops"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
+				<HackerLink
 					href="/team-and-faculty/"
 					label="Team & Faculty"
 					isNavbar={false}
@@ -77,7 +83,7 @@
 
 	<div class="relative mt-8 w-full max-w-[1440px] overflow-hidden">
 		<p
-			class="text-flicker w-full text-left text-[14vw] leading-none font-bold whitespace-nowrap opacity-10 select-none xl:text-[11vw]"
+			class="text-flicker w-full text-center text-[14vw] leading-none font-bold whitespace-nowrap opacity-10 select-none xl:text-[11vw]"
 		>
 			IETE - KJSIT
 		</p>

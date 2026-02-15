@@ -46,6 +46,7 @@
 		{ href: '/', label: 'HOME' },
 		{ href: '/oscillation/', label: 'OSCILLATION' },
 		{ href: '/past-events/', label: 'PAST_EVENTS' },
+		{ href: '/workshops/', label: 'WORKSHOPS' },
 		{ href: '/team-and-faculty/', label: 'TEAM' }
 	];
 
