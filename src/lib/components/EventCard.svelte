@@ -52,7 +52,7 @@
 		></div>
 	</div>
 
-	<div class="flex flex-1 flex-col p-5">
+	<div class="flex flex-1 flex-col p-5 backdrop-blur-[3px]">
 		<h3 class="mb-2 font-mono text-xl font-bold text-white group-hover:text-green-400">
 			{event.title}
 		</h3>
