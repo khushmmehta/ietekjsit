@@ -22,7 +22,7 @@
 
 html,
 body {
-	@apply h-full w-full overflow-x-hidden bg-transparent font-bold text-white;
+	@apply min-h-screen min-w-screen overflow-x-hidden bg-transparent font-bold text-white;
 }
 
 body {
