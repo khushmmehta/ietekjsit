@@ -39,14 +39,14 @@
 			</div>
 		</div>
 
-		<div class="flex shrink-0 flex-row gap-4 self-center md:gap-8 lg:gap-8 lg:self-start xl:gap-16">
+		<div class="flex shrink-0 flex-row gap-16 self-center lg:self-start">
 			<img
-				class="box-flicker size-32 rounded-full object-cover lg:size-28 xl:size-40"
+				class="box-flicker size-28 rounded-full object-cover lg:size-28 xl:size-40"
 				src={iete_logo}
 				alt="iete logo"
 			/>
 			<img
-				class="box-flicker size-32 rounded-full object-cover lg:size-28 xl:size-40"
+				class="box-flicker size-28 rounded-full object-cover lg:size-28 xl:size-40"
 				src={somaiya_logo}
 				alt="somaiya_logo"
 			/>
