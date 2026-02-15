@@ -30,19 +30,19 @@
 
 <section class="relative w-full py-16">
 	<!-- Section Header -->
-	<div class="mb-12 flex items-center gap-4 px-4 md:px-12">
-		<div class="h-[2px] w-12 bg-green-500"></div>
-		<h2
-			class="font-mono text-3xl font-bold text-white text-shadow-[0_0_15px_rgba(0,255,0,0.5)] md:text-4xl"
-		>
+	<header class="mb-8">
+		<h1 class="mb-2 font-mono text-4xl font-bold text-white md:text-5xl">
 			Memory_Archive
-		</h2>
-	</div>
+			<span class="animate-pulse text-green-500">_</span>
+		</h1>
+		<div class="h-1 w-24 bg-green-500"></div>
+	</header>
 
 	<div class="columns-1 gap-4 space-y-4 px-4 md:columns-2 md:px-12 lg:columns-3">
 		{#each photos as photo}
 			<!-- svelte-ignore a11y_click_events_have_key_events -->
 			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
 				class="group relative cursor-pointer break-inside-avoid overflow-hidden rounded-xl border border-white/10 bg-black"
 				onclick={() => openLightbox(photo)}
@@ -77,6 +77,8 @@
 
 	<!-- Lightbox Modal -->
 	{#if selectedPhoto}
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
 			transition:fade={{ duration: 200 }}

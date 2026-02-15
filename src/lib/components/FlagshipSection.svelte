@@ -14,14 +14,13 @@
 
 <section class="relative w-full py-16">
 	<!-- Section Header -->
-	<div class="mb-12 flex items-center gap-4 px-4 md:px-12">
-		<div class="h-[2px] w-12 bg-green-500"></div>
-		<h2
-			class="font-mono text-3xl font-bold text-white text-shadow-[0_0_15px_rgba(0,255,0,0.5)] md:text-4xl"
-		>
+	<header class="mb-8">
+		<h1 class="mb-2 font-mono text-4xl font-bold text-white md:text-5xl 2xl:text-7xl">
 			Flagship_Events
-		</h2>
-	</div>
+			<span class="animate-pulse text-green-500">_</span>
+		</h1>
+		<div class="h-1 w-24 bg-green-500"></div>
+	</header>
 
 	<!-- Horizontal Scroll Container -->
 	<div
@@ -36,7 +35,7 @@
 		}}
 	>
 		{#each flagshipEvents as event}
-			<div class="scroll-snap-align-center w-[85vw] flex-shrink-0 md:w-[400px]">
+			<div class="scroll-snap-align-center w-[85vw] flex-shrink-0 md:w-[400px] 2xl:w-[550px]">
 				<FlagshipEventCard {event} onClick={onOpenModal} />
 			</div>
 		{/each}
