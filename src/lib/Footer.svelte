@@ -1,6 +1,7 @@
 <script lang="ts">
 	import iete_logo from '$lib/assets/images/iete_logo.jpg';
 	import somaiya_logo from '$lib/assets/images/somaiya_logo.webp';
+	import HackerLink from './components/HackerLink.svelte';
 </script>
 
 <footer class="mt-8 flex w-full flex-col items-center gap-8 pl-4 md:pl-0">
@@ -12,30 +13,51 @@
 		<div class="flex w-full flex-col items-start gap-12 md:flex-row lg:w-auto lg:gap-8 xl:gap-16">
 			<div class="flex flex-col items-start text-left">
 				<p class="text-flicker mb-4 text-3xl md:text-5xl">Socials</p>
-				<p class="text-xl text-neutral-300 md:text-3xl">Instagram</p>
-				<p class="text-xl text-neutral-300 md:text-3xl">LinkedIn</p>
+				<HackerLink
+					href="https://www.instagram.com/ietekjsit/"
+					label="Instagram"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
+				<HackerLink
+					href="https://www.linkedin.com/company/iete-kjsit/"
+					label="LinkedIn"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
 
 				<div class="my-6 md:my-4"></div>
 
 				<p class="text-flicker mb-4 text-3xl md:text-5xl">Contact Us</p>
-				<a
+				<HackerLink
 					href="mailto:iete.tech@somaiya.edu"
-					class="text-xl text-neutral-300 hover:text-white md:text-3xl">iete.tech@somaiya.edu</a
-				>
+					label="iete.tech@somaiya.edu"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
 			</div>
 
 			<div class="flex flex-col items-start text-left">
 				<p class="text-flicker mb-4 text-3xl md:text-5xl">Navigation</p>
-				<a href="/" class="text-xl text-neutral-300 hover:text-white md:text-3xl">Home</a>
-				<a href="/oscillation/" class="text-xl text-neutral-300 hover:text-white md:text-3xl"
-					>Oscillation</a
-				>
-				<a href="/past-events/" class="text-xl text-neutral-300 hover:text-white md:text-3xl"
-					>Past Events</a
-				>
-				<a href="/team-and-faculty/" class="text-xl text-neutral-300 hover:text-white md:text-3xl"
-					>Team & Faculty</a
-				>
+				<HackerLink href="/" label="Home" isNavbar={false} className="text-xl md:text-3xl" />
+				<HackerLink
+					href="/oscillation/"
+					label="Oscillation"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
+				<HackerLink
+					href="/past-events/"
+					label="Past Events"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
+				<HackerLink
+					href="/team-and-faculty/"
+					label="Team & Faculty"
+					isNavbar={false}
+					className="text-xl md:text-3xl"
+				/>
 			</div>
 		</div>
 

@@ -2,13 +2,20 @@
 	import './layout.css';
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.png';
+	import { page } from '$app/stores';
 
 	import Footer from '$lib/Footer.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
 
 	let { children } = $props();
 </script>
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
+
+{#if $page.url.pathname !== '/'}
+	<Navbar />
+{/if}
+
 <div class="flex h-auto w-full flex-col items-center px-4 md:px-12 lg:px-20 xl:px-32">
 	{@render children()}
 
