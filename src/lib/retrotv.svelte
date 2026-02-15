@@ -16,7 +16,7 @@
 	}: Props<THREE.Group> & {
 		colorMap: string;
 		ref?: THREE.Group;
-		children?: Snippet<[{ ref: THREE.Group }]>;
+		children?: Snippet<[{ ref: THREE.Group | undefined }]>;
 		fallback?: Snippet;
 		error?: Snippet<[{ error: Error }]>;
 	} = $props();
