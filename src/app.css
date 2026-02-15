@@ -20,8 +20,9 @@
 	font-family: 'ProFont';
 }
 
-html, body {
-	@apply h-full w-full bg-transparent font-bold text-white overflow-x-hidden;
+html,
+body {
+	@apply h-full w-full overflow-x-hidden bg-transparent font-bold text-white;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
 }
 
 .text-flicker {
-	@apply text-green-300 text-shadow-[0px_0px_24px_#00ff00];
+	@apply text-[#44ff44] text-shadow-[0px_0px_24px_#00ff00];
 	animation: flicker 3s infinite;
 }
 
