@@ -94,14 +94,6 @@
 						<span class="text-xs tracking-widest text-gray-500 uppercase">Participants</span>
 						<span class="text-xl font-bold text-white">{event.participants}</span>
 					</div>
-
-					<button
-						class="group relative overflow-hidden rounded bg-green-600 px-6 py-2 font-bold text-black transition-all hover:bg-green-500 hover:shadow-[0_0_20px_rgba(0,255,0,0.4)]"
-					>
-						<span class="relative z-10 flex items-center gap-2">
-							ACCESS EVENT <span class="transition-transform group-hover:translate-x-1">→</span>
-						</span>
-					</button>
 				</div>
 			</div>
 		</div>
