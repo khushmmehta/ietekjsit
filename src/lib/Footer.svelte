@@ -5,7 +5,7 @@
 </script>
 
 <footer class="mt-8 flex w-full flex-col items-center gap-8 pl-4 md:pl-0">
-	<div class="h-1 w-full bg-linear-to-r from-transparent via-green-500 to-transparent"></div>
+	<div class="h-1 w-full bg-linear-to-r from-transparent via-[#44ff44] to-transparent"></div>
 
 	<div
 		class="flex w-full max-w-[1400px] flex-col items-start justify-between gap-12 pr-4 lg:flex-row lg:pr-8"
