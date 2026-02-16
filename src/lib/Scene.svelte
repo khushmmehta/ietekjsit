@@ -120,7 +120,7 @@
 		const returnSpeed = 0.1; // How fast points return to original position
 
 		// Calculate scroll-based scatter
-		const scrollScatterAmount = Math.min(scrollY / 400, 3); // Max scatter at 500px scroll
+		const scrollScatterAmount = Math.min(scrollY / 200, 3); // Max scatter at 500px scroll
 
 		for (let i = 0; i < originalPositions.length; i++) {
 			const original = originalPositions[i];
@@ -194,7 +194,7 @@
 				alphaMap={$circleTexture}
 				depthWrite={false}
 				toneMapped={false}
-				size={0.05}
+				size={(0.05 * (window.innerHeight - scrollY * 2)) / window.innerHeight}
 				transparent={true}
 			/>
 		</T.Points>
