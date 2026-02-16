@@ -70,18 +70,18 @@
 	class="fixed top-0 z-50 w-full border-b border-green-500/30 bg-black/60 font-mono text-green-500 backdrop-blur-sm"
 >
 	<div
-		class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 2xl:max-w-[1600px]"
+		class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 2xl:h-24 2xl:max-w-[1600px]"
 	>
 		<!-- Left: Brand + Status -->
 		<div class="flex items-center gap-8">
 			<!-- Brand/Logo -->
 			<a
 				href="/"
-				class="group flex items-center gap-2 text-xl font-bold tracking-widest text-white"
+				class="group flex items-center gap-2 text-xl font-bold tracking-widest text-white 2xl:text-3xl"
 				onmouseenter={onLogoEnter}
 				onmouseleave={onLogoLeave}
 			>
-				<Terminal class="text-green-500" />
+				<Terminal class="text-green-500 2xl:h-8 2xl:w-8" />
 				<span class="transition-all duration-300 group-hover:text-shadow-[0_0_15px_#00ff00]"
 					>{logoText}</span
 				>
@@ -99,7 +99,7 @@
 		</div>
 
 		<!-- Center/Right: Desktop Navigation -->
-		<div class="hidden md:flex md:items-center md:gap-4">
+		<div class="hidden md:flex md:items-center md:gap-4 2xl:gap-8">
 			{#each links as link}
 				<HackerLink href={link.href} label={link.label} />
 			{/each}
