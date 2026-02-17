@@ -21,9 +21,7 @@
 		</div>
 
 		<!-- Divider -->
-		<div
-			class="h-px w-full bg-gradient-to-r from-green-500/50 via-transparent to-transparent"
-		></div>
+		<div class="h-1 w-full bg-gradient-to-r from-[#44ff44]/80 via-transparent to-transparent"></div>
 
 		<!-- About Section -->
 		<div class="flex flex-col gap-6">
