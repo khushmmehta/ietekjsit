@@ -77,26 +77,33 @@
 </script>
 
 <div class="flex min-h-screen w-full flex-col p-4 pt-24 md:p-8 md:pt-32">
-	<div class="flex flex-col gap-8">
-		<div>
-			<h1
-				class="text-flicker mb-2 font-mono text-5xl font-bold tracking-tighter md:text-7xl lg:text-7xl 2xl:text-[7rem] 2xl:leading-none"
-			>
-				TEAMS & FACULTY
-			</h1>
-			<p class="font-mono text-lg text-green-500/80 md:text-xl 2xl:text-2xl">
-				&lt; Meet the people who make IETE happen /&gt;
-			</p>
+	<div class="flex flex-col gap-16 md:flex-row">
+		<div class="flex flex-col gap-8">
+			<div>
+				<h1
+					class="text-flicker mb-2 font-mono text-5xl font-bold tracking-tighter md:text-7xl lg:text-7xl 2xl:text-[7rem] 2xl:leading-none"
+				>
+					TEAMS & FACULTY
+				</h1>
+				<p class="font-mono text-lg text-green-500/80 md:text-xl 2xl:text-2xl">
+					&lt; Meet the people who make IETE happen /&gt;
+				</p>
+			</div>
+
+			<div class="h-1 w-full bg-linear-to-r from-[#44ff44]/80 via-transparent to-transparent"></div>
+
+			<div class="self-right relative rounded-md border-[#44ff44]">
+				<img
+					src={ieteTeam}
+					alt="IETE TEAM"
+					class="w-auto rounded-md border border-white/10 object-scale-down md:h-192"
+				/>
+			</div>
 		</div>
 
-		<div class="h-1 w-full bg-linear-to-r from-[#44ff44]/80 via-transparent to-transparent"></div>
-
-		<div class="self-right relative rounded-md border-[#44ff44]">
-			<img
-				src={ieteTeam}
-				alt="IETE TEAM"
-				class="w-auto rounded-md border border-white/10 object-scale-down md:h-192"
-			/>
+		<div class="flex flex-col gap-8">
+			<TeamCard text="Chairperson" image={techTeamImg} />
+			<TeamCard text="Vice-Chairperson" image={techTeamImg} />
 		</div>
 	</div>
 
