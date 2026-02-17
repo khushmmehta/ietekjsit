@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { Trophy, Users, Info } from 'lucide-svelte';
-	// Import generated image
-	//import achievementBg from '$lib/assets/images/oscillation_achievement_bg.webp'; // Assuming webp format from generate_image
+	import { Trophy, Info } from 'lucide-svelte';
 </script>
 
 <section class="relative mb-24 grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">

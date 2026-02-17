@@ -47,9 +47,6 @@
 		>
 			{event.category}
 		</div>
-		<div
-			class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"
-		></div>
 	</div>
 
 	<div class="flex flex-1 flex-col p-5 backdrop-blur-[3px]">
@@ -59,6 +56,18 @@
 		<p class="mb-4 line-clamp-3 text-sm text-gray-400">
 			{event.description}
 		</p>
+
+		{#if event.category === 'Workshop' && event.status !== 'Completed' && event.registrationLink}
+			<a
+				href={event.registrationLink}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mb-4 flex w-full items-center justify-center gap-2 rounded border border-green-500/30 bg-green-500/10 py-2 text-sm font-bold text-green-400 transition-all hover:bg-green-500 hover:text-black hover:shadow-[0_0_10px_#00ff00]"
+				onclick={(e) => e.stopPropagation()}
+			>
+				Register
+			</a>
+		{/if}
 
 		<div
 			class="mt-auto flex items-center justify-between border-t border-white/10 pt-4 font-mono text-xs text-gray-500"
