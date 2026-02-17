@@ -102,8 +102,28 @@
 		</div>
 
 		<div class="flex flex-col gap-8">
-			<TeamCard text="Chairperson" image={techTeamImg} />
-			<TeamCard text="Vice-Chairperson" image={techTeamImg} />
+			<div
+				class="flex min-h-64 w-full shrink-0 flex-col justify-between gap-4 rounded-md border border-white/10 bg-transparent shadow-lg backdrop-blur-[3px] duration-300 hover:border-green-500/80 md:min-h-96 md:w-128"
+			>
+				<!-- svelte-ignore a11y_img_redundant_alt -->
+				<img
+					src={techTeamImg}
+					alt="image"
+					class="aspect-video rounded-t-md border border-white/10"
+				/>
+				<p class="text-flicker m-4 text-3xl md:text-5xl">Chairperson</p>
+			</div>
+			<div
+				class="flex min-h-64 w-full shrink-0 flex-col justify-between gap-4 rounded-md border border-white/10 bg-transparent shadow-lg backdrop-blur-[3px] duration-300 hover:border-green-500/80 md:min-h-96 md:w-128"
+			>
+				<!-- svelte-ignore a11y_img_redundant_alt -->
+				<img
+					src={techTeamImg}
+					alt="image"
+					class="aspect-video rounded-t-md border border-white/10"
+				/>
+				<p class="text-flicker m-4 text-3xl md:text-5xl">Vice-Chairperson</p>
+			</div>
 		</div>
 	</div>
 
