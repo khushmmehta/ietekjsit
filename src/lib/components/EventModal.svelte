@@ -44,9 +44,6 @@
 			<!-- Image Section with Scanline -->
 			<div class="relative h-64 w-full md:h-auto">
 				<img src={event.image} alt={event.title} class="h-full w-full object-cover" />
-				<div
-					class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"
-				></div>
 
 				<!-- Scanline Animation -->
 				<div
@@ -88,6 +85,19 @@
 				<div class="prose max-w-none text-gray-300 prose-invert">
 					<p class="text-lg leading-relaxed">{event.fullDescription || event.description}</p>
 				</div>
+
+				{#if event.category === 'Workshop' && event.status !== 'Completed' && event.registrationLink}
+					<div class="mt-6">
+						<a
+							href={event.registrationLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex w-full items-center justify-center gap-2 rounded bg-green-600 px-6 py-3 text-lg font-bold text-black shadow-[0_0_15px_rgba(0,255,0,0.3)] transition-all hover:scale-[1.02] hover:bg-green-500 hover:shadow-[0_0_25px_rgba(0,255,0,0.6)]"
+						>
+							Register Now
+						</a>
+					</div>
+				{/if}
 
 				<div class="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
 					<div class="flex flex-col">

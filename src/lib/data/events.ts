@@ -11,6 +11,7 @@ export interface Event {
     duration?: string;
     isFlagship?: boolean;
     status?: 'Upcoming' | 'Ongoing' | 'Registration' | 'Completed';
+    registrationLink?: string;
 }
 
 export const events: Event[] = [
@@ -72,7 +73,8 @@ export const events: Event[] = [
         participants: '150+',
         duration: '6 Hours',
         isFlagship: true,
-        status: 'Upcoming'
+        status: 'Upcoming',
+        registrationLink: 'https://forms.google.com'
     },
     {
         id: '5',
@@ -89,6 +91,7 @@ export const events: Event[] = [
         isFlagship: false,
         status: 'Completed'
     },
+
     {
         id: '6',
         title: 'Tech Talk: Quantum Computing',
@@ -103,5 +106,32 @@ export const events: Event[] = [
         duration: '2 Hours',
         isFlagship: false,
         status: 'Completed'
-    }
+    },
+    {
+        id: '5b',
+        title: 'Legacy Workshop: Cloud 101',
+        category: 'Technical',
+        description: 'Introduction to AWS and Azure cloud platforms.',
+        fullDescription: 'A past workshop covering the basics of cloud computing.',
+        date: 'Jan 15, 2026',
+        location: 'Lab 2',
+        image: 'https://placehold.co/600x400/000000/00ff00?text=Cloud',
+        participants: '80+',
+        duration: '3 Hours',
+        status: 'Completed'
+    },
+    {
+        id: '6b',
+        title: 'Retro Gaming Night',
+        category: 'Gaming',
+        description: 'A classic gaming tournament from last year.',
+        fullDescription: 'Students competed in Mario Kart and Street Fighter.',
+        date: 'Dec 10, 2025',
+        location: 'Student Lounge',
+        image: 'https://placehold.co/600x400/000000/00ff00?text=Retro',
+        participants: '120+',
+        duration: '5 Hours',
+        status: 'Completed'
+    },
+
 ];
