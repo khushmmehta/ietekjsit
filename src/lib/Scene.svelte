@@ -168,22 +168,41 @@
 <T.PerspectiveCamera makeDefault position.y={0} position.z={10} fov={90} />
 <T.DirectionalLight position={[0, 10, 10]} intensity={3} />
 
-<Align>
-	{#snippet children({ align })}
-		<T.Mesh bind:ref={textMeshRef} visible={false}>
-			<Text3DGeometry
-				font={$font}
-				text={'IETE-\nKJSIT'}
-				oncreate={() => {
-					align();
-					setTimeout(generatePoints, 0);
-				}}
-				size={5}
-				depth={1}
-			/>
-		</T.Mesh>
-	{/snippet}
-</Align>
+{#if window.innerWidth > window.innerHeight}
+	<Align>
+		{#snippet children({ align })}
+			<T.Mesh bind:ref={textMeshRef} visible={false}>
+				<Text3DGeometry
+					font={$font}
+					text={'IETE-\nKJSIT'}
+					oncreate={() => {
+						align();
+						setTimeout(generatePoints, 0);
+					}}
+					size={5}
+					depth={1}
+				/>
+			</T.Mesh>
+		{/snippet}
+	</Align>
+{:else}
+	<Align>
+		{#snippet children({ align })}
+			<T.Mesh bind:ref={textMeshRef} visible={false}>
+				<Text3DGeometry
+					font={$font}
+					text={'IE\nTE\n-K\nJS\nIT'}
+					oncreate={() => {
+						align();
+						setTimeout(generatePoints, 0);
+					}}
+					size={2}
+					depth={1}
+				/>
+			</T.Mesh>
+		{/snippet}
+	</Align>
+{/if}
 
 {#if currentPositions.length > 0}
 	<Align rotation.x={mouseY * 0.5} rotation.y={-mouseX * 0.5}>
