@@ -7,7 +7,6 @@
 
 	$effect(() => {
 		if (startanim) {
-			// Reset on text change
 			visibleText = '';
 			index = 0;
 			clearInterval(interval);
@@ -26,9 +25,31 @@
 	});
 </script>
 
-<span>{visibleText}<span class="animate-blink">|</span></span>
+<span class="wrapper">
+	<!-- Invisible full text reserves space -->
+	<span class="ghost" aria-hidden="true">{text}</span>
+	<!-- Visible animated text sits on top -->
+	<span class="content">{visibleText}<span class="animate-blink">|</span></span>
+</span>
 
 <style>
+	.wrapper {
+		position: relative;
+		display: inline-block;
+	}
+
+	.ghost {
+		visibility: hidden;
+		white-space: pre-wrap;
+	}
+
+	.content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		white-space: pre-wrap;
+	}
+
 	.animate-blink {
 		animation: blink 1s step-end infinite;
 	}

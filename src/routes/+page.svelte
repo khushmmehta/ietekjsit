@@ -26,11 +26,10 @@
 	</Canvas>
 </div>
 
-<article class="flex h-[25vw] w-full flex-col px-4">
+<article class="flex w-full flex-col px-4">
 	<div class="self-start md:w-3xl lg:w-4xl">
-		<h1 class="text-flicker mt-8 text-6xl md:text-8xl">What We're About.</h1>
-
-		<p class="min-h-30 text-2xl md:min-h-20 md:text-3xl">
+		<h1 class="text-flicker mt-8 text-3xl sm:text-4xl md:text-8xl">What We're About.</h1>
+		<p class="min-h-30 text-lg sm:text-2xl md:min-h-20 md:text-3xl">
 			<Typewriter
 				text="We are the IETE Student Chapter of KJSIT—a nexus for creators, thinkers, and pioneers. We transcend the conventional, pushing the boundaries of technology and engineering to build a smarter tomorrow. This is our digital hub."
 				speed={30}
@@ -40,7 +39,7 @@
 	</div>
 </article>
 
-<div class="mt-64 size-[100vw] md:-mt-32 md:h-screen md:w-screen">
+<div class="size-[100vw] md:-mt-32 md:h-screen md:w-screen">
 	<Canvas>
 		<SceneTV />
 	</Canvas>
