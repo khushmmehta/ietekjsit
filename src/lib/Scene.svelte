@@ -208,14 +208,25 @@
 	<Align rotation.x={mouseY * 0.5} rotation.y={-mouseX * 0.5}>
 		<T.Points bind:ref={pointsRef}>
 			<T is={pointsBufferGeometry} />
-			<T.PointsMaterial
-				color="#00ff00"
-				alphaMap={$circleTexture}
-				depthWrite={false}
-				toneMapped={false}
-				size={(0.05 * (window.innerHeight - scrollY * 2)) / window.innerHeight}
-				transparent={true}
-			/>
+			{#if window.innerWidth > window.innerHeight}
+				<T.PointsMaterial
+					color="#00ff00"
+					alphaMap={$circleTexture}
+					depthWrite={false}
+					toneMapped={false}
+					size={(0.05 * (window.innerHeight - scrollY * 2)) / window.innerHeight}
+					transparent={true}
+				/>
+			{:else}
+				<T.PointsMaterial
+					color="#00ff00"
+					alphaMap={$circleTexture}
+					depthWrite={false}
+					toneMapped={false}
+					size={(0.02 * (window.innerHeight - scrollY * 2)) / window.innerHeight}
+					transparent={true}
+				/>
+			{/if}
 		</T.Points>
 	</Align>
 {/if}
